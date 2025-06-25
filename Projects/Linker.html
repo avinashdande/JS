@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Project Linker</title>
+  <style>
+    body{
+      font-family: Arial;
+    }
+    .sub{
+      border: none;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px 10px 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-bottom: 40px;
+    }
+    .is-sub{
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+    .input{
+      font-size: 15px;
+      padding: 10px;
+    }
+    .cal{
+      background-color: rgb(0, 128, 0);
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button onclick="subscribe();" class="sub">Subscribe</button>
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40 = +$10 Shipping cost</p>
+  <p>Orders over $40 = Free Shipping</p>
+  <p>
+  <input placeholder="Cost of order" class="input" onkeydown="handleCostKeydown();">
+  <button onclick="
+  checkCost();
+  " class="cal">Calculate</button>
+  </p>
+  <p class="cost"></p>
+  <script>
+    function handleCostKeydown(){
+      if(event.key === 'Enter')
+      checkCost();
+    }
+    function subscribe(){
+      const buttonElement = document.querySelector('.sub');
+      let value = buttonElement.innerText;
+      if(value === 'Subscribe'){
+      buttonElement.innerHTML = 'Subscribed';
+      buttonElement.classList.add('is-sub');
+      }
+      else{
+      buttonElement.innerHTML = 'Subscribe';
+      buttonElement.classList.remove('is-sub');
+      }
+    }
+    function checkCost(){
+      const inputValue = document.querySelector('.input');
+      let cost = Number((inputValue.value));
+      if(cost < 40)
+      cost+=10;
+      document.querySelector('.cost').innerHTML = `$${cost}`;
+    }
+  </script>
+</body>
+</html>

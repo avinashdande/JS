@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document Object Model</title>
+</head>
+<body>
+  <button>Gojo</button>
+  <button class="js-button">Satoru</button>
+  <script>
+    console.log(document.body);
+    console.log(typeof document.body);
+    console.log(document.body.innerHTML);
+    document.body.innerHTML = 'Soul';
+    document.title = 'DOM';
+    document.body.innerHTML = '<button>Sanemi</button>'
+    console.log(document.querySelector('button'));
+    console.log(document.querySelector('button').innerHTML); //Returns Sanemi
+    // document.querySelector('button').innerHTML = 'Giyu'; Run with this line after running the previous code
+    const buttonElement = document.querySelector('.js-button'); // It makes the null because we changed the innerhtml if not we get satoru in console
+    console.log(buttonElement);
+    console.log(String(25));
+    console.log(Number('25'));
+    window.alert('Works as alert by default window is automatically added by JS');
+  </script>
+</body>
+</html>

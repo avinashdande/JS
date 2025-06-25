@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Conditionals</title>
+</head>
+<body>
+  <script>
+    let hour = 16;
+    const name = 'Avinash';
+    if(hour >=6 && hour <=12)
+    console.log(`Good Morning!, ${name}`);
+    else if(hour>12 && hour<=16)
+    console.log(`Good Afternoon!, ${name}`);
+    else if(hour>16 && hour<=19)
+    console.log(`Good Evening!, ${name}`);
+    else
+    console.log(`Good Night!, ${name}`);
+    //Discount
+    let age = 6;
+    const isHoliday = false;
+    if((age<=6 || age>=65) && isHoliday)
+    console.log('Discount applicable');
+    else
+    console.log('No discount'); 
+    //Heads or Tails
+    const num = Math.random();
+    let result = num<=0.5 ? 'Heads':'Tails';
+    let guess = 'Heads';
+    console.log(guess===result ? 'Your guess is correct':'Your guess is wrong');
+  </script>
+</body>
+</html>

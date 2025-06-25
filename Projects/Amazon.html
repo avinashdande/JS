@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Amazon - Clone</title>
+</head>
+<body>
+  <script>
+    let item1 ={
+      name:'Basketball',
+      price:2095
+    };
+    let item2 ={
+      name:'Volleyball',
+      price:2000
+    };
+    let item3 = item1; // We can't directly compare objects as they are references here we can compare as reference is same but always not possible
+    item1.price+=500;
+    console.log(item1.price);
+    item1['delivery-time'] = '3days';
+    console.log(item1);
+    console.log('Less expensive one is',comparePrice(item1.price, item2.price));
+    function comparePrice(p1, p2){
+      if(p1<p2)
+      return p1;
+      else
+      return p2;
+    }
+    console.log(isSameProduct(item1.name, item3.name, item1.price, item3.price))
+    function isSameProduct(n1, n2, p1, p2){
+      if(n1 === n2 && p1 === p2)
+      return true;
+      else 
+      return false;
+    }
+  </script>
+</body>
+</html>

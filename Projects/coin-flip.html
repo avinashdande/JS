@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Coin-flipper</title>
+</head>
+<body>
+  <p>Coin-flipper</p>
+  <button onclick="
+    playGame('Heads');
+  ">Heads</button>
+  <button onclick="
+    playGame('Tails');
+  ">Tails</button>
+  <button onclick="
+    count.Wins = 0;
+    count.Loses = 0;
+    localStorage.removeItem('score');
+    presentScore();
+  ">Reset Score</button>
+  <p class="pick"></p>
+  <p class="state"></p>
+  <p class="score"></p>
+  <script>
+    let count = JSON.parse(localStorage.getItem('score')) || { // Can be used as default operator value that is true will be taken
+      Wins:0, 
+      Loses:0
+    };
+    presentScore();
+    function playGame(pick){
+      const move = pickMove();
+      let state = ''
+      if(pick === 'Heads'){
+        if(move === 'Tails'){
+          state = 'You lost';
+          count.Loses+=1;
+        }
+        else{
+          state = 'You Won';
+          count.Wins+=1;
+        }
+      }
+      else {
+        if(move === 'Tails'){
+          state = 'You Won';
+          count.Wins+=1;
+        }
+        else{
+          state = 'You lost';
+          count.Loses+=1;
+        }
+      }
+      localStorage.setItem('score',JSON.stringify(count));
+      alert(`You picked ${pick}. System picked ${move}, ${state}.\nWins:${count.Wins}, Loses:${count.Loses}`);
+      // You can remove this alert for more convinience
+      document.querySelector('.pick').innerHTML = `You picked ${pick} - System picked ${move}`;
+      document.querySelector('.state').innerHTML = `${state}`;
+      presentScore();
+    }
+    function pickMove(){
+      const randomNumber = Math.random();
+      let move = ''
+      if(randomNumber >=0 && randomNumber < 0.5)
+      move = 'Heads';
+      else
+      move = 'Tails';
+    return move;
+    }
+    function presentScore(){
+      document.querySelector('.score').innerHTML = `Wins:${count.Wins}, Loses:${count.Loses}`;
+    }
+  </script>
+</body>
+</html>

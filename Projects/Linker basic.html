@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Project Linker</title>
+</head>
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button onclick="subscribe();" class="sub">Subscribe</button>
+  <p>Amazon Shipping Calculator<br>Orders under $40 = +$10 Shipping cost<br>Orders over $40 = Free Shipping</p>
+  <input placeholder="Cost of order" class="input" onkeydown="handleCostKeydown();">
+  <button onclick="
+  checkCost();
+  ">Calculate</button>
+  <p class="cost"></p>
+  <script>
+    function handleCostKeydown(){
+      if(event.key === 'Enter')
+      checkCost();
+    }
+    function subscribe(){
+      const buttonElement = document.querySelector('.sub');
+      let value = buttonElement.innerText;
+      if(value === 'Subscribe')
+      buttonElement.innerHTML = 'Subscribed';
+      else
+      buttonElement.innerHTML = 'Subscribe';
+    }
+    function checkCost(){
+      const inputValue = document.querySelector('.input');
+      let cost = Number((inputValue.value));
+      if(cost < 40)
+      cost+=10;
+      document.querySelector('.cost').innerHTML = `$${cost}`;
+    }
+  </script>
+</body>
+</html>

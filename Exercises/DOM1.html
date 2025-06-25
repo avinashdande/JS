@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM Exercises</title>
+  <style>
+    button{
+      margin: 5px 5px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <button>Itachi</button>
+  <button class="uchiha">Uzumaki</button><br>
+  <input placeholder="Enter your name" class="input" onkeydown="
+  if(event.key === 'Enter')
+  printName();">
+  <button onclick="
+  printName()
+  ">Submit</button>
+  <p class="name"></p>
+  <p>Amazon Shipping Calculator</p>
+  <input placeholder="Cost of order" class="input1" onkeydown="handleCostKeydown();">
+  <button onclick="
+  checkCost();
+  ">Calculate</button>
+  <p class="cost"></p>
+  <input placeholder="Type any thing" class="input3" onkeyup="placeInput();">
+  <p class="onInput"></p>
+  <script>
+    console.log(document.querySelector('button'));
+    document.querySelector('.uchiha').innerHTML = 'Uchiha';
+    function printName(){
+      let inputVal = document.querySelector('.input').value;
+      document.querySelector('.name').innerHTML = `Hello, ${inputVal}`;
+    }
+    function checkCost(){
+      const inputValue = document.querySelector('.input1');
+      let cost = Number((inputValue.value));
+      cost*=100;                            // Here for the value 7.99 gives a long value so *100/100 policy is usedcheck the other code in linker.html
+      if(cost < 4000)
+      cost+=1000;
+      document.querySelector('.cost').innerHTML = `$${cost/100}`;
+    }
+    function handleCostKeydown(){
+      if(event.key === 'Enter')
+      checkCost();
+    }
+    function placeInput(){
+      let inputVal = document.querySelector('.input3').value;
+      if(event)
+      document.querySelector('.onInput').innerHTML = `${inputVal}`;
+    }
+  </script>
+</body>
+</html>

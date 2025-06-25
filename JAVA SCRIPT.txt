@@ -1,0 +1,218 @@
+JAVA SCRIPT
+##BASICS##
+We give instructions to the computer, and it follows them
+document.body.innerHTML = ' hello' changes the body to that text
+alert('hello');  Gives a pop-up on the screen that says hello
+
+##Numbers and Math##
+Arithmetic operators works +,-,*,/ on float values also
+Operator precedence
+( ) --> Have highest priority
+* / --> have the same priority
++ - --> Have same priority
+If both occur, it will operate from left to right
+Weird behavior of JS--
+If we add 0.1 + 0.2 it gives .03000000...4
+Some float values can't be stored properly because their binary format is inaccurate, e.g., 0.2
+0.1*10 + 0.2*10 = 3 and then divide it by 10 so we can get 0.3$
+This property does not apply to all float values
+To overcome this inaccuracy, we go for,
+	Calculating the money in cents(paisa format)
+	By using Math. round()-->we can round a number up to the 0th decimal only
+	By using Math. ceil()-->we can round up a number
+
+##Strings##
+A string is written in '..' (single quotes)
+	+-->Used to append strings
+	typeof() is used to determine the data type of a value
+If we add a number and a string, the output will be a string
+Ex-'$'+(2095+799)/100
+   '$28.94'
+Anything that is added to a string will become a string too.
+By typing, allow pasting will enable pasting a code on the console of a website
+There are mainly three ways to create a string in JS:
+	1. Single quotes
+	2. Double quotes
+	3. Backticks beside 1 
+Escape Characters can be used by \ and a given character. For example, \' can be used inside a string to insert this '
+	\n --> Newline character
+In the 3rd way, we have some special features, such as template strings, and we have interpolation
+	Interpolation --> 'Items (${1+1})', By ${} we can give value in those
+	Multi-line --> strings can be created, and \n is automatically created in that
+
+##HTML-CSS RECAP##
+html-head-body
+<style> is used for CSS and written only in the head part (Internal CSS)
+Live Server can be used for automated reload upon code change
+In Settings,
+	Tab --> Can be used to change the indent spaces
+	Wrap --> (Word Wrap) is used to reduce the line that is too far and reduce it to a visible length
+<script> is used to run our JavaScript code, and it can be written anywhere, i.e, head/body
+	We can also run JS by specific attributes such as onclick="";
+//,/**/ are used as comments in JS
+<!--  --> is used in HTML
+			
+##JS-Basics##
+(OUTPUT)
+console.log --> Display anything that is between the parentheses and prints its value/math
+##Variables##
+Variable --> It is a storage container used to store a value, such as a number, a String, etc.
+	     In JavaScript, a variable without a declared data type can store any type of value.
+	; -> Represents end of a statement & Last semi-colon is automatically inserted even if we didn't code	
+	let Var1 = 5;
+	console.log(var1);
+Operators like ++, +=1 are same
+There are mainly 4 types of naming conventions
+1 -- (Camel case) & in this we capitalize the first letter of words from 2nd word
+2 -- (Pascal Case) & in this we capitalize every first letter of each word, including the first one
+3 -- (kebab Case) & in this we use - to separate the words(not used in JS)
+4 -- (Snake case) & in this we use _ to separate each word
+There are mainly three ways to create variables in JS They are
+	1 --> let (values can be changed after assigning)
+	2 --> const (values are fixed once assigned)
+	3 --> var(Old way and same as let)
+typeof is used to know the datatype of a value/variable
+eval() --> It is used to convert a string value into a mathematical value - (2+5*7)
+
+##Booleans##
+Booleans are the values of true & false, and they are not encoded in quotes
+By the comparison operators, we will get the output of that comparison as true or false
+IMP - == will convert two values into the same datatype and return true if they are equal
+	Ex - console.log(5 == '5.0') give true
+So, to avoid this mistake, we use triple equals (===)
+Logical Operators - They are used to combine Boolean values(&&, ||, !), ! --> change the Boolean value to it's opposite value
+
+
+##Conditionals##
+If-else pattern checks a condition, and if it's true, it will execute some set of code if otherwise, it will go to the else block
+The else block is optional if the condition
+else if() --> can be used to add more conditions, and we can have as many as we want
+Math.random() --> it is a function that is used to generate a random number from 0 to 1 in decimals(Used in R-P-S game)
+Scope --> It is one of the important things, and we have a limited scope for local(inside {} braces are limited them even in if-else too)
+Falsy values --> false, 0, NaN, undefined, '' (These values are always false representations)
+	Other than these, it will always be truly valuable.
+	NaN --> Not a number
+	Ex - console.log('str'/5) Not math
+Ternary operators are also available in JS
+
+##Functions##
+A function is a block of code that is used for repetitive actions (Code Reusability)
+First, we have to write the code, and then we are going to call it
+Scope is essential in the functions(Check if the variables are used only in the function; if not, then declare outside)
+Return --> It is used to return a value after the function is called, returns it, and variable changes will be the same
+Ex -- function fName(){...return value;}
+Anything written after the function is not executed
+Be careful while returning its scope and place the value appropriately
+By passing parameters, we pass a value to a function, and using parameters will save a lot of time
+We can set default values to parameters at function declaration by =
+Ex -- fName(cal = 10) -- If passed default will be overrided
+If a parameter is not passed, then it will pass undefined(Falsy value)
+
+##Objects##
+Object --> An object groups multiple values together
+	It stores multiple heterogeneous data types (Alias Dictionaries in Python)
+	Every Element has its property and a Value, and it can be accessed by its object name / objName.prop (if Specific)
+Objects are mutable and stored in the form of property-value pairs (Check Objects.html for code details)
+(delete objName.property) will delete that property in the object
+Every object ends with a semicolon, and commas separate elements inside the object
+There are mainly two approaches for calling the objects: they are,
+	1 --> Dot notation(product.name)
+	2 --> Bracket notation(product['name') ***
+The second approach is more useful than the first one because in some situations it can't work out.
+	Ex -> product.delivery-time (Will understood as math instead of property name)
+Another important feature of objects is that we can store any type of values, even other objects (Nested Objects & Functions to Refer to the code) ***
+console --> Object
+log --> function
+console.log() --> Method (Object + function = Method) ***
+
+##Built-In Objects##
+They are the objects that come with JS itself,
+	Ex - console.log(), Math.random() etc
+(1) JSON Built-In Object
+JSON --> JavaScript Object Notation (It is similar to JS Objects)
+But, the main difference is that in JSON format, all strings and properties are enclosed in double quotes("..")	
+	It doesn't support single quotes & functions too
+JS Objects are limited to JS & JSON is Universal and easily understood in any language
+*** JSON Object(Built-in) is used to convert a JS Object into JSON format ***
+JS Object --> JSON Object
+JSON.stringify() --> It changes the JS object into a JSON Object
+	JSON --> Object
+	stringify() --> Function (Total Method)
+JSON --> JS Object
+JSON.parse (JSON-object) --> Converts back into JS Object
+
+(2) localStorage built-in object
+It is used to save the values more permanently
+Variables generally represent temporary storage for values. Once the tab is closed, data will be erased from memory
+Here comes the localStorage, it stores the data permanently, so the data is not deleted if the page is reloaded	(Useful in Rock-Paper-Scissors game)
+*** localStorage supports only strings, and every element has a name for uniqueness
+localStorage.setItem(name, string) --> Stores the data locally in string format by a name reference (name should also be in string format)
+localStorage.getItem(name) --> will return the string with that name 
+(check objects.html & rock-paper-scissors for more details)
+localStorage.removeItem(name) --> Removes an item from the local storage
+Note - Only after setting a value perfectly we can retrieve the value
+** (Use JSON.stringify() to change JS object to strings as localStorage supports only strings) **
+Null vs Undefined
+Null --> Intentionally, the value is empty
+Undefined --> It is not defined, but both are falsy values
+
+(3) Auto-boxing
+JS automatically turns out strings, numbers, and booleans into special objects so that we can use methods on them
+Ex - console.log('Hello'.length)
+This Auto-boxing is not supported for undefined & null values
+Objects are references to data that is stored somewhere in the computer's memory
+*** There is a shortcut for accessing and storing an object's value in a variable (check in objects.html)
+	(Destructuring)
+If property and value are the same, we can use shorthand shortcut,
+ const value = { message } --> No need for writing the value
+toLowerCase() --> It is used to convert a string to lower case 
+string.repeat(count) --> Repeats the string with count value
+
+## Document Object Model (DOM) ###
+Document object represents / Models the webpage 
+It is one of the most useful things in JS,
+Ex --> document.body.innerHtml = 'Hello'; (Removes anything present in the body of the web page to the given value)
+	document.title = 'DOM'; (changes the title of the page)
+A Document object consists of both properties and methods.
+*** document.body --> Very special element as they are connected to the body of the web page
+It converts both JS & HTML together 
+typeof document. body --> Will give you as an Object,
+We can also print the innerHTML of a webpage in that way
+It doesn't only change the innerHTML to text, it can also change the body to another HTML code
+## Methods of DOM ##
+document. querySelector() --> Let us retrieve any HTML element as a JS element, and that element is written in string format (Check the code)
+Every element has innerHTML, representing the HTML part of the element
+Note --> document.querySelector() --> Will select the first occurrence of the given value, ex, Button
+	 So, it is recommended to use class selectors when dealing with the DOM
+For Linker,
+	innerHTML --> Selects all the HTML, including spaces
+	innerText --> Selects only the text of the given element
+<input> --> Gives you a text box, and it is a void element (no closing tag required), with attributes -- placeholder, type
+	We use an input element's dot value to get the value of the input box, and by default input value is in string format
+Number(string) --> It is used to convert a string value into a number
+Clicks & Keydowns are Events
+onClick & OnKeydown --> Event listerners
+So, as we press a key, onkeydown will work
+onscroll, onmouseenter, and onmouseleave are some of the event listeners
+*** onkeydown will get an event(object), Once console.log(event) --> To get more information about that event
+Note --> If we use -, *, / using a string and a number, then that string is automatically typecast into a number
+	 But with +, vice versa will happen
+## Window Object ##
+Window --> Represents the browser
+document --> Represents the Web page
+The Document object is present inside the Window object
+The window object is the parent object to all other objects, such as console, document & alert too
+	Ex --> window. console.log(), window.alert() (But in JS, window is automatically taken, it is just for Informational purposes)
+onkeyup --> It is present in the pictures folder ***
+
+## HTML,CSS & JS Together ##
+Apply CSS to all the projects that have been done so far, and check out the final projects
+(rock-paper-scissors, Heads-tails)
+classList gives us control over the classes, one of the important properties
+By using this classList object, we can do various actions such as, 
+Adding a class if we click a button
+buttonElement.classList.add('js-button') --> Will add an extra class for styling to a button, check (linker.html) 
+.classList.add('class') --> Will add a extra class
+.classList.remove('class') --> Will remove the specified class
+An HTML element can have as many class names as want
+Ex --> class = "js button"; (js & button will represent the same class)

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Functions</title>
+</head>
+<body>
+  <script>
+    function fun1(para){
+      console.log('Total tax is:',para*0.1); //Backticks can also be used
+    }
+    fun1(1000);
+    fun1(2000);
+    // Greet
+    function greet(name){
+      if(!name)
+      console.log('Hi, there!');
+      else
+      console.log(`Hello, ${name}`);
+    }
+    greet('Avinash');
+    greet();
+    // Temperature conversion
+    function convertToFahrenheit(celcius){
+      console.log(celcius*9/5+32+'F');        // Backticks Interpolation can be used
+    }
+    function convertToCelcius(fahrenheit){
+      console.log((fahrenheit-32)*5/9+'C');   // Backticks Interpolation can be used
+    }
+    convertToFahrenheit(37);
+    convertToCelcius(98.6);
+    function convertTemperature(degree,unit='F'){ // If not defined by default it takes C as unit
+      if(unit == 'C')
+      convertToFahrenheit(degree);
+      else
+      convertToCelcius(degree);
+    }
+    convertTemperature(37,'C');
+    convertTemperature(98.6);
+    // Length Conversion
+    function converLength(value,from,to){
+      if(from === 'miles'){
+        if(to === 'Km')
+        console.log(value*1.6);                 // 1 mile = 1.6KM Approx
+        else
+        console.log(value*5280);                // 1 mile = 5280 ft Approx
+      }
+      else if(from === 'Km'){
+        if(to === 'miles')
+        console.log(value/1.6);                // Reverse to conversion
+        else 
+        console.log(value*3281);                // 1 KM = 3281ft Approx
+      }
+      else{
+        if(to === 'miles')
+        console.log(value/5280);
+        else
+        console.log(value/3281);
+      }
+    }
+    converLength(50,'miles','Km');
+    converLength(5,'miles','ft');
+    converLength(3.2,'Km','miles');
+    converLength(5,'ft','miles');              // Use Math.round() for more accuracy in floating points
+  </script>
+</body>
+</html>

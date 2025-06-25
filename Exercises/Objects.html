@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    const product = {
+      name:'Socks',
+      price: 10,
+      ratings:{
+        Stars:5,
+        review:72
+      },
+      fun: function fun1(){
+        console.log("Details");
+      }
+    }
+    console.log(product);
+    console.log(product.price);
+    product.isCloth = true;
+    console.log(product);
+    delete product.isCloth;
+    console.log(product);
+    console.log(product['name']); // Second way to retrieve 
+    console.log(product.ratings.Stars);
+    product.fun();
+    console.log(JSON.stringify(product)); // Function will be vanished and converted to JSON format-strings 
+    const jsonString = JSON.stringify(product);
+    console.log(JSON.parse(jsonString));
+    localStorage.setItem('message','hello');
+    console.log(localStorage.getItem('message'));
+    // References
+    const obj1 = {
+      message:'Hello',
+      value            // Check the error here
+    };
+    const obj2 = obj1; // obj2 points to reference of obj1
+    obj1.message = 'Hi'
+    console.log(obj1); // Value in the reference so no error occurs even if it is const value
+    const {message} = obj1;
+    console.log(message);
+    let namer = 'GOJO';
+    console.log(namer.toLowerCase());
+    console.log(namer.repeat(3));
+  </script>
+</body>
+</html>
