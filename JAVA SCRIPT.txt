@@ -214,5 +214,9 @@ Adding a class if we click a button
 buttonElement.classList.add('js-button') --> Will add an extra class for styling to a button, check (linker.html) 
 .classList.add('class') --> Will add a extra class
 .classList.remove('class') --> Will remove the specified class
-An HTML element can have as many class names as want
+.classList.contains('class') --> Will check if the specified class is present or not
+.classList.toggle('class') --> Will toggle the classes that can be used with the onclick function
+Note --> Before using any classList function, we have to retrieve it by querySelector and innerHTML
+	this -->  Represents the current html elemet if there are more elemets with same class
+An HTML element can have as many class names as it wants
 Ex --> class = "js button"; (js & button will represent the same class)

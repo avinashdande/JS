@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Html-Css-Js Practice</title>
+  <style>
+    body{
+      font-family: Arial;
+    }
+    .add{
+      background-color: rgb(255, 216, 20);
+      color: black;
+      border: none;
+      padding: 8px 28px;
+      font-size: 14px;
+      border-radius: 16px;
+    }
+    .add:hover{
+      cursor: pointer;
+      opacity: 0.8;
+    }
+    .req{
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .sch{
+      background-color: rgb(230, 230, 230);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .three{
+      background-color: rgb(230, 230, 230);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .three1{
+      color: white;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <button class="add" onclick="changeButton();">Add to Cart</button><br><br>
+  <button class="req">Request Now</button>
+  <button class="sch">Schedule for later</button><br><br>
+  <button class="three" onclick="toggle(this)">Gaming</button>
+  <button class="three" onclick="toggle(this)">Music</button>
+  <button class="three" onclick="toggle(this)">Tech</button><br><br>
+  <button class="three" onclick="change(this)">Gaming</button>
+  <button class="three" onclick="change(this)">Music</button>
+  <button class="three" onclick="change(this)">Tech</button>
+  <script>
+    let element = document.querySelector('.add');
+    console.log(element.classList.contains('add'));
+    function changeButton(){
+      let buttonElement = document.querySelector('.add').innerHTML;
+      if(buttonElement === 'Add to Cart')
+      document.querySelector('.add').innerHTML = 'Added';
+      else
+      document.querySelector('.add').innerHTML = 'Add to Cart';
+    }
+    function toggle(buttonElement){
+      buttonElement.classList.toggle('three1');
+    }
+    function change(buttonElement){
+      let activeButton = document.querySelector('.three1');
+      if(activeButton)
+      activeButton.classList.remove('three1');
+      buttonElement.classList.add('three1');
+    }
+  </script>
+</body>
+</html>
