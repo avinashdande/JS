@@ -5,8 +5,12 @@
         calculation=eval(calculation);
         console.log(calculation);
       }
-      else
-      calculation+=value;
+      else{
+        if(calculation === '0')
+        calculation = value;                  // It makes the zero disappear and dosen't work as 025 will be considered as octal value, leave it if you dont understand
+        else
+        calculation+=value;
+      }
       localStorage.setItem('cal',calculation);
       showCalculation();
     }

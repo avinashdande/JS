@@ -217,6 +217,18 @@ buttonElement.classList.add('js-button') --> Will add an extra class for styling
 .classList.contains('class') --> Will check if the specified class is present or not
 .classList.toggle('class') --> Will toggle the classes that can be used with the onclick function
 Note --> Before using any classList function, we have to retrieve it by querySelector and innerHTML
-	this -->  Represents the current html elemet if there are more elemets with same class
+	this -->  Represents the current HTML element if there are more elements with the same class
 An HTML element can have as many class names as it wants
 Ex --> class = "js button"; (js & button will represent the same class)
+
+## ARRAYS & LOOPS ##
+Array --> It is a list of values of any data type(Only for JS arrays)
+	Ex - const arr = [5, 6.7, 'Avinash', true, { clan: Uchiha }, [1, 2]]
+	We can include objects too
+We can access elements of an array by their indexes, and arrays are mutable
+We use [...] square brackets for listing the elements in an array
+Indexing will always start from 0 to the size of the array
+Array is an object, so it has various properties, such as length
+Array.isArray(any array) --> Will check if it is an array or not and returns a Boolean value
+push(value) --> Appends the specified value at the end of the array
+splice(index, no.of values) --> Removes given number of values from the specified index

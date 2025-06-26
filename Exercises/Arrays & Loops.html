@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arrays & Loops</title>
+</head>
+<body>
+  <script>
+    let myArr = [10, 20, 30];
+    console.log(myArr[0]);
+    myArr[0] = 1;
+    console.log(myArr);
+    myArr = [1, 2.5, 'Avinash', { clan: 'Uchiha'}, [1, 2]]; // We can include anything in an array
+    console.log(myArr);
+    console.log(typeof myArr);
+    console.log(Array.isArray(myArr));
+    console.log(myArr.length);
+    myArr.push('Uchiha');
+    myArr.splice(0, 2); // Removes 1, 2.5 from index 0 
+    console.log(myArr);
+  </script>
+</body>
+</html>
