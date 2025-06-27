@@ -231,4 +231,12 @@ Indexing will always start from 0 to the size of the array
 Array is an object, so it has various properties, such as length
 Array.isArray(any array) --> Will check if it is an array or not and returns a Boolean value
 push(value) --> Appends the specified value at the end of the array
-splice(index, no.of values) --> Removes given number of values from the specified index
+splice(index, no.of values) --> Removes the given number of values from the specified index
+Loop --> It is code that runs until a condition is met
+There are several loops in JS,
+1 --> for(loop) --- Standard loop
+2 --> while(loop) --- Non-standard loop
+3 --> foreach
+Loops also have scope, as if-statements & functions do
+We can insert HTML code into JS by backticks, and HTML tags will work (check todo list project)
+Note --> NaN + anyvalue = NaN

@@ -17,6 +17,139 @@
     myArr.push('Uchiha');
     myArr.splice(0, 2); // Removes 1, 2.5 from index 0 
     console.log(myArr);
+    //Loops - (While loop)
+    let i = 1;
+    while(i<7){
+      console.log(i);
+      i++;
+    }
+    //Loops - (for loop)
+    for(i = 1;i <= 5;i++)
+    console.log(i);
+    //While loop Usage Example
+    let randomNumber = 0;
+    while(randomNumber < 0.5){
+      randomNumber = Math.random();
+      console.log(randomNumber);
+    }
+    //Array Iteration with loops
+    for(i = 0;i < myArr.length;i++)
+    console.log(myArr[i]);
+    //Sum of numbers in an Array
+    let sum = 0;
+    let numbers = [1, 4, 6, 7, 2];
+    for(i=0;i<numbers.length;i++)
+    {
+      sum += numbers[i];
+    }
+    console.log(sum);
+    //Doubling all the digits in an array
+    for(i=0;i<numbers.length;i++)
+    {
+      numbers[i]*=2;
+    }
+    console.log(numbers);
+    // Exercises
+    const numArr = [10, 20, 30];
+    numArr[2] = 99;
+    console.log(numArr);
+    // To retrieve last value of an array
+    console.log(getLastValue(myArr));
+    console.log(getLastValue(numArr));
+    function getLastValue(arr){
+      return arr[arr.length-1];
+    }
+    // Array Swap first & last elements
+    console.log(arraySwap(myArr));
+    console.log(arraySwap(numArr));
+    function arraySwap(arr){
+      let temp = arr[0];
+      arr[0] = arr[arr.length-1];
+      arr[arr.length-1] = temp;
+      return arr;
+    }
+    //Evens
+    for(i=0;i<=10;i+=2)
+    console.log(i);
+    //Reverse 
+    for(i=5;i>=1;i--)
+    console.log(i);
+    //Same with while
+    i = 0;
+    while(i<=10){
+      console.log(i);
+      i+=2;
+    }
+    i = 5;
+    while(i>=1){
+      console.log(i);
+      i--;
+    }
+    //Add a number to given array (Includes all the elements)
+    console.log(addOne(numbers,2));
+    console.log(addOne(numArr,1));
+    function addOne(arr,num){
+      let newArray = [];
+      for(i = 0;i<arr.length;i++)
+      newArray.push(arr[i]+num);
+    return newArray;
+    }
+    //Add two arrays
+    console.log(addArray(numbers,numArr));
+    function addArray(arr,arr1){
+      let newArray = [];
+      for(i = 0;i<arr.length;i++)
+      newArray.push(arr[i]+arr1[i]);
+    return newArray;
+    }
+    //Count number of positives
+    let realArr = [];
+    console.log(countPositive(realArr));
+    function countPositive(arr){
+      let sum = 0;
+      for(i = 0;i<arr.length;i++)
+      if(arr[i]>0)
+        sum+=1;
+    return sum;
+    }
+    //Finding minimum & maximum element in an array
+    console.log(minMax(realArr));
+    function minMax(arr){
+      let min = arr[0], max = arr[0];
+      let minMaxObject = {};
+      if(arr.length === 0){
+        minMaxObject.min = null;
+        minMaxObject.max = null;
+        return minMaxObject;
+      }
+      if(arr.length === 1){
+        minMaxObject.min = min;
+        minMaxObject.max = max;
+        return minMaxObject;
+      }
+      for(i = 0;i<arr.length;i++){
+        if(arr[i]<min)
+          min = arr[i];
+        if(arr[i]>max)
+          max = arr[i];
+      }
+      minMaxObject.min = min;
+      minMaxObject.max = max;
+    return minMaxObject;
+    }
+    //Count number of times a word repeated
+    let fruits = ['apple','grape','apple','apple'];
+    console.log(countWords(fruits));
+    function countWords(arr){
+      let result = {};
+      for(i = 0;i<arr.length;i++){
+        if(!result[arr[i]])
+          result[arr[i]] = 1;
+        else
+          result[arr[i]]++;
+      }
+      return result;
+    }
   </script>
 </body>
 </html>

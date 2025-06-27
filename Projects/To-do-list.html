@@ -7,6 +7,7 @@
   <p>Todo List</p>
   <input placeholder="Todo Name" class="input" onkeydown="check()">
   <button onclick="addWork()">Add</button>
+  <div class="Works"></div>
   <script>
     let todoArr = [];
     function check(){
@@ -14,9 +15,17 @@
       addWork();
     }
     function addWork(){
+      let arrElement;
+      let todoList = '';
       let inputElement = document.querySelector('.input');
       todoArr.push(inputElement.value);
       console.log(todoArr);
+      for(let i = 0;i < todoArr.length;i++){
+        arrElement = todoArr[i];
+        todoList += `<p>${arrElement}</p>`;
+      }
+      document.querySelector('.Works').innerHTML = `${todoList}`;
+      inputElement.value = '';
     }
   </script>
 </body>
