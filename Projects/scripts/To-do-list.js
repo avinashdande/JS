@@ -1,4 +1,4 @@
-    let todoArr = [];
+    let todoArr = JSON.parse(localStorage.getItem('todo')) || [];
     function check(){
       if(event.key === 'Enter')
       addWork();
@@ -19,6 +19,7 @@
           <button onclick="todoArr.splice(${i}, 1);addWork();" class="delete-button">Delete</button>`;
       }
       document.querySelector('.Works').innerHTML = `${todoList}`;
-      name = '';
-      dueDate = '';
+      localStorage.setItem('todo',JSON.stringify(todoArr));
+      inputElement.value = '';
     }
+    addWork();
