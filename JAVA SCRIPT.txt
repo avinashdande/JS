@@ -240,3 +240,4 @@ There are several loops in JS,
 Loops also have scope, as if-statements & functions do
 We can insert HTML code into JS by backticks, and HTML tags will work (check todo list project)
 Note --> NaN + anyvalue = NaN
+For To-do-list learn CSS grid *** for more styling
